@@ -1,17 +1,19 @@
 defmodule Practice.Calc do
-  def parse_float(text) do
-    {num, _} = Float.parse(text)
-    num
-  end
+  #def parse_float(text) do
+    #{num, _} = Float.parse(text)
+   # num
+  #end
 
   def calc(expr) do
     # This should handle +,-,*,/ with order of operations,
     # but doesn't need to handle parens.
     expr
-    |> String.split(~r/\s+/)
-    |> hd
-    |> parse_float
-    |> :math.sqrt()
+    |> Code.eval_string()
+    |> elem(0)
+    #|> String.split(~r/\s+/)
+    #|> hd
+    #|> parse_float
+    #|> :math.sqrt()
 
     # Hint:
     # expr
